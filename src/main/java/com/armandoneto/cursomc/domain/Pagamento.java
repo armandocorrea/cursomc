@@ -4,7 +4,7 @@ import java.io.Serializable;
 import java.util.Objects;
 
 import com.armandoneto.cursomc.domain.enums.EstadoPagamento;
-import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -24,7 +24,7 @@ public abstract class Pagamento implements Serializable {
 	
 	private Integer estado;
 	
-	@JsonBackReference
+	@JsonIgnore
 	@JoinColumn(name="pedido_id")
 	@OneToOne
 	@MapsId
